@@ -1,0 +1,30 @@
+.login-parent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+.login{
+    background-color: #eee;
+    width: 30%;
+    padding: 50px;
+    font-size: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
+}
+
+.login-input{
+    width: 80%;
+}
+
+.login-input-cnt{
+    margin: 20px 0px;
+}
+
+.f-p{
+    font-size: 15px;
+    margin-top: 20px;
+    color: #263238;
+}

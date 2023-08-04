@@ -1,0 +1,12 @@
+.app-bar{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263238;
+    color: white;
+}
+
+.primary-btn{
+    color: white;
+}

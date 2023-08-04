@@ -1,0 +1,18 @@
+.welcome{
+    font-size: 30px;
+    color: rgba(0,0,0,0.87);
+    text-align: center;
+}
+
+.welcome-parent{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
