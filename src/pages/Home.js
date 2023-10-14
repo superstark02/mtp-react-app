@@ -4,12 +4,14 @@ import "../style/Home.css";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import {db} from "../firebase"
+import Graphql from "../functions/grphql";
 
 function Home() {
 
   const [userLoggedIn, setUserLoggedin] = useState("Please wait...");
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
+  const [graphqlData, setGraphqlData] = useState(null);
 
   useEffect(()=>{
     const auth = getAuth();
@@ -30,6 +32,21 @@ function Home() {
         setUserLoggedin("Please Login/Signup");
       }
     });
+
+    const MY_QUERY = `
+    query {
+        data(limit:10){
+            _id,
+            name,
+            imageUrl
+        }
+    }`;
+
+    Graphql(MY_QUERY).then(res=>{
+      res.json().then(data=>{
+        setGraphqlData(data.data)
+      });
+    })
   })
 
   const handleLogout = () => {
@@ -52,7 +69,7 @@ function Home() {
                 <div>
                   Name: {userData.name}
                   <div className="flex justify-center" >
-                    <img className="profile-photo" src={userData.image_url}/>
+                    <img alt="pp" className="profile-photo" src={userData.image_url}/>
                   </div>
                 </div>
                 <div className="mt-20"  onClick={handleLogout}>Logout</div>
@@ -60,6 +77,25 @@ function Home() {
             ):(
               <div></div>
             )
+          }
+        </div>
+        <div>
+          {
+            graphqlData && graphqlData.map(item=>{
+              return(
+                <div>
+                  <div>
+                    {item.name}
+                  </div>
+                  <div>
+                    <img src={item.imageUrl} alt="char" />
+                  </div>
+                  <div>
+                    {item.id}
+                  </div>
+                </div>
+              )
+            })
           }
         </div>
       </div>
