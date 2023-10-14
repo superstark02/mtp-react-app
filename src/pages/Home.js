@@ -68,7 +68,7 @@ function Home() {
         </div>
       </div>
       <div>New Addition</div>
-      <div>My new changes</div>
+      <div>more new additions</div>
     </div>
   );
 }
