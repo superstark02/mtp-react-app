@@ -68,6 +68,7 @@ function Home() {
         </div>
       </div>
       <div>New Addition</div>
+      <div>more new additions</div>
     </div>
   );
 }
