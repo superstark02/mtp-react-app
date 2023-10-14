@@ -4,13 +4,11 @@ import "../style/Home.css";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
-import Graphql from "../functions/grphql";
 
 function Home() {
   const [userLoggedIn, setUserLoggedin] = useState("Please wait...");
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
-  const [graphqlData, setGraphqlData] = useState(null);
 
   useEffect(() => {
     const auth = getAuth();
@@ -68,21 +66,8 @@ function Home() {
             <div></div>
           )}
         </div>
-        <div>
-          {graphqlData &&
-            graphqlData.map((item) => {
-              return (
-                <div>
-                  <div>{item.name}</div>
-                  <div>
-                    <img src={item.imageUrl} alt="char" />
-                  </div>
-                  <div>{item.id}</div>
-                </div>
-              );
-            })}
-        </div>
       </div>
+      <div>New Addition</div>
     </div>
   );
 }
