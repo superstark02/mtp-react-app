@@ -68,10 +68,7 @@ function Home() {
         </div>
       </div>
       <div>New Addition</div>
-<<<<<<< HEAD
-=======
       <div>My new changes</div>
->>>>>>> 02ab5f2 (new feature added in f1)
     </div>
   );
 }
